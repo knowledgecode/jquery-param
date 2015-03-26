@@ -1,0 +1,39 @@
+{
+  "name": "jquery-param",
+  "version": "0.1.0",
+  "description": "a function that is equivalent of jQuery.param",
+  "main": "src/jquery-param.js",
+  "scripts": {
+    "test": "mocha test.js && mocha-phantomjs test.html",
+    "compile": "gulp compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knowledgecode/jquery-param.git"
+  },
+  "keywords": [
+    "jquery",
+    "param",
+    "equivalent",
+    "jquery.param",
+    "serialize",
+    "post"
+  ],
+  "author": "KNOWLEDGECODE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knowledgecode/jquery-param/issues"
+  },
+  "homepage": "https://github.com/knowledgecode/jquery-param",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "gulp": "^3.8.11",
+    "gulp-closure-compiler-service": "^0.5.0",
+    "gulp-rename": "^1.2.0",
+    "jquery": "^1.11.2",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.1",
+    "mocha-phantomjs": "^3.5.3",
+    "phantomjs": "^1.9.16"
+  }
+}
