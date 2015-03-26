@@ -1,9 +1,9 @@
 # jquery-param [![Circle CI](https://circleci.com/gh/knowledgecode/jquery-param.svg?style=svg)](https://circleci.com/gh/knowledgecode/jquery-param)
 ## Features
-- equivalent to output of jQuery.param
-- not need jQuery
-- no dependency
-- legacy IE support
+- equivalent to output of jQuery.param  
+- not need jQuery  
+- no dependency  
+- legacy IE support  
 ## Install
 Node.js:
 ```shell
