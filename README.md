@@ -1,9 +1,11 @@
 # jquery-param [![Circle CI](https://circleci.com/gh/knowledgecode/jquery-param.svg?style=svg)](https://circleci.com/gh/knowledgecode/jquery-param)
+
 ## Features
 - equivalent to output of jQuery.param  
 - not need jQuery  
 - no dependency  
 - legacy IE support  
+
 ## Install
 Node.js:
 ```shell
@@ -13,6 +15,7 @@ browser:
 ```html
 <script src="./src/jquery-param.min.js"></script>
 ```
+
 ## Usage
 Node.js:
 ```javascript
@@ -29,7 +32,9 @@ var obj = { key1: { value1: [10, 20, 30] }, key2: '?a=b&c=d' };
 var str = window.param(obj);
 // "key1%5Bvalue1%5D%5B%5D=10&key1%5Bvalue1%5D%5B%5D=20&key1%5Bvalue1%5D%5B%5D=30&key2=%3Fa%3Db%26c%3Dd"
 ```
+
 ## Browser Support
 Chrome, Firefox, Safari, Opera, and Internet Explorer 6+.
+
 ## License
 MIT
