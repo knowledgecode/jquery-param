@@ -6,10 +6,17 @@
 - no dependency  
 - legacy IE support  
 
+## WHY
+In case that want to transmit a post request in such as Web Workers which cannot use jQuery. At least I've made this for it :-).  
+
 ## Install
 Node.js:
 ```shell
 $ npm install jquery-param --save
+```
+Bower:
+```shell
+$ bower install jquery-param
 ```
 browser:
 ```html
