@@ -1,8 +1,7 @@
 /**
  * @preserve jquery-param (c) 2015 KNOWLEDGECODE | MIT
  */
-/*jslint forin: true, plusplus: true */
-/*global module, define */
+/*global define */
 (function (global) {
     'use strict';
 

@@ -1,12 +1,10 @@
-/*jslint node: true, evil: true */
-/*global describe, it, before */
 (function (global) {
     'use strict';
 
     describe('equivalence', function () {
         var $,
             expect = global.expect || require('expect.js'),
-            param = global.param || require('./src/jquery-param'),
+            param = global.param || require('../jquery-param'),
             test = function (done, obj) {
                 try {
                     expect(param(obj)).to.eql($.param(obj));
