@@ -1,0 +1,4 @@
+---
+  rules:
+    no-new-func: 0
+    no-new-wrappers: 0
