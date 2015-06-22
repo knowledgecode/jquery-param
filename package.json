@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A function that is equivalent of jQuery.param",
   "main": "jquery-param.js",
   "scripts": {
@@ -27,9 +27,9 @@
   "homepage": "https://github.com/knowledgecode/jquery-param",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "jquery": "^1.11.2",
+    "jquery": "^1.11.3",
     "jsdom": "^3.1.2",
-    "mocha": "^2.2.4",
+    "mocha": "^2.2.5",
     "mocha-phantomjs": "^3.5.3"
   }
 }

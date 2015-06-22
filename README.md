@@ -1,4 +1,4 @@
-# jquery-param [![Circle CI](https://circleci.com/gh/knowledgecode/jquery-param.svg?style=svg)](https://circleci.com/gh/knowledgecode/jquery-param)
+# jquery-param [![Circle CI](https://circleci.com/gh/knowledgecode/jquery-param.svg?style=shield)](https://circleci.com/gh/knowledgecode/jquery-param)
 
 ## Features
 - equivalent to output of jQuery.param  
@@ -6,8 +6,8 @@
 - no dependency  
 - legacy IE support  
 
-## WHY
-In case that want to transmit a post request in such as Web Workers which cannot use jQuery. At least I've made this for it :-).  
+## What is this good for?
+In the case of making a GET/POST request in such as Web Workers which cannot use jQuery.
 
 ## Install
 Node.js:
