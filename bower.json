@@ -1,7 +1,7 @@
 {
   "name": "jquery-param",
   "description": "A function that is equivalent of jQuery.param",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "jquery-param.js",
   "moduleType": [
     "amd",
