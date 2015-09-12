@@ -7,7 +7,7 @@
             param = global.param || require('../jquery-param'),
             test = function (done, obj) {
                 try {
-                    expect(param(obj)).to.eql($.param(obj));
+                    expect(decodeURIComponent(param(obj))).to.eql(decodeURIComponent($.param(obj)));
                 } catch (e) {
                     return done(e);
                 }
@@ -65,6 +65,13 @@
             test(done, obj);
         });
 
+        it('wry Array', function (done) {
+            var obj = {
+                '[]': ['[]', '[]', '[]']
+            };
+            test(done, obj);
+        });
+
         it('Object', function (done) {
             var obj = {
                 foo: {
@@ -74,23 +81,34 @@
             test(done, obj);
         });
 
+        it('wry Object', function (done) {
+            var obj = {
+                foo: {
+                    '[]': 1,
+                    '[[]]': 2,
+                    '[[[]]]': 3
+                }
+            };
+            test(done, obj);
+        });
+
         it('String', function (done) {
             var obj = {
-                foo: new String()
+                foo: new String()   // eslint-disable-line no-new-wrappers
             };
             test(done, obj);
         });
 
         it('Number', function (done) {
             var obj = {
-                foo: new Number()
+                foo: new Number()   // eslint-disable-line no-new-wrappers
             };
             test(done, obj);
         });
 
         it('Boolean', function (done) {
             var obj = {
-                foo: new Boolean()
+                foo: new Boolean()  // eslint-disable-line no-new-wrappers
             };
             test(done, obj);
         });
@@ -111,7 +129,7 @@
 
         it('Function', function (done) {
             var obj = {
-                foo: new Function()
+                foo: new Function() // eslint-disable-line no-new-func
             };
             test(done, obj);
         });
@@ -168,6 +186,45 @@
                     [1, 2, 3], [4, 5, 6], [7, 8, 9]
                 ]
             };
+            test(done, obj);
+        });
+
+        it('wry Array in Array 1', function (done) {
+            var obj = {
+                '[]': [
+                    ['[]'], ['[]', '[]'], ['[]', '[]', '[]']
+                ]
+            };
+            test(done, obj);
+        });
+
+        it('wry Array in Array 2', function (done) {
+            var obj = [
+                ['[]'], ['[]', '[]'], ['[]', '[]', '[]']
+            ];
+            test(done, obj);
+        });
+
+        it('wry Array in Array 3', function (done) {
+            var obj = {
+                foo: [
+                    [[1]], [[1, 2], [1, 2]], [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+                ]
+            };
+            test(done, obj);
+        });
+
+        it('wry Array in Array 4', function (done) {
+            var obj = [
+                {
+                    name: '[]',
+                    value: '[1]'
+                },
+                {
+                    name: '[]',
+                    value: '[2]'
+                }
+            ];
             test(done, obj);
         });
 
@@ -243,17 +300,17 @@
         });
 
         it('String only', function (done) {
-            var obj = new String();
+            var obj = new String(); // eslint-disable-line no-new-wrappers
             test(done, obj);
         });
 
         it('Number only', function (done) {
-            var obj = new Number();
+            var obj = new Number(); // eslint-disable-line no-new-wrappers
             test(done, obj);
         });
 
         it('Boolean only', function (done) {
-            var obj = new Boolean();
+            var obj = new Boolean();    // eslint-disable-line no-new-wrappers
             test(done, obj);
         });
 
@@ -263,7 +320,7 @@
         });
 
         it('Function only', function (done) {
-            var obj = new Function();
+            var obj = new Function();   // eslint-disable-line no-new-func
             test(done, obj);
         });
 
