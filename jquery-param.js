@@ -1,41 +1,48 @@
 /**
  * @preserve jquery-param (c) 2015 KNOWLEDGECODE | MIT
  */
-/*global define */
 (function (global) {
     'use strict';
 
     var param = function (a) {
-        var add = function (s, k, v) {
-            v = typeof v === 'function' ? v() : v === null ? '' : v === undefined ? '' : v;
-            s[s.length] = encodeURIComponent(k) + '=' + encodeURIComponent(v);
-        }, buildParams = function (prefix, obj, s) {
-            var i, len, key;
+        var s = [], rbracket = /\[\]$/,
+            isArray = function (obj) {
+                return Object.prototype.toString.call(obj) === '[object Array]';
+            }, add = function (k, v) {
+                v = typeof v === 'function' ? v() : v === null ? '' : v === undefined ? '' : v;
+                s[s.length] = encodeURIComponent(k) + '=' + encodeURIComponent(v);
+            }, buildParams = function (prefix, obj) {
+                var i, len, key;
 
-            if (Object.prototype.toString.call(obj) === '[object Array]') {
-                for (i = 0, len = obj.length; i < len; i++) {
-                    buildParams(prefix + '[' + (typeof obj[i] === 'object' ? i : '') + ']', obj[i], s);
-                }
-            } else if (obj && obj.toString() === '[object Object]') {
-                for (key in obj) {
-                    if (obj.hasOwnProperty(key)) {
-                        if (prefix) {
-                            buildParams(prefix + '[' + key + ']', obj[key], s, add);
-                        } else {
-                            buildParams(key, obj[key], s, add);
+                if (prefix) {
+                    if (isArray(obj)) {
+                        for (i = 0, len = obj.length; i < len; i++) {
+                            if (rbracket.test(prefix)) {
+                                add(prefix, obj[i]);
+                            } else {
+                                buildParams(prefix + '[' + (typeof obj[i] === 'object' ? i : '') + ']', obj[i]);
+                            }
                         }
+                    } else if (obj && String(obj) === '[object Object]') {
+                        for (key in obj) {
+                            buildParams(prefix + '[' + key + ']', obj[key]);
+                        }
+                    } else {
+                        add(prefix, obj);
+                    }
+                } else if (isArray(obj)) {
+                    for (i = 0, len = obj.length; i < len; i++) {
+                        add(obj[i].name, obj[i].value);
+                    }
+                } else {
+                    for (key in obj) {
+                        buildParams(key, obj[key]);
                     }
                 }
-            } else if (prefix) {
-                add(s, prefix, obj);
-            } else {
-                for (key in obj) {
-                    add(s, key, obj[key]);
-                }
-            }
-            return s;
-        };
-        return buildParams('', a, []).join('&').replace(/%20/g, '+');
+                return s;
+            };
+
+        return buildParams('', a).join('&').replace(/%20/g, '+');
     };
 
     if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -49,3 +56,4 @@
     }
 
 }(this));
+
