@@ -1,11 +1,11 @@
 {
   "name": "jquery-param",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "equivalent function to jQuery.param",
   "main": "jquery-param.js",
   "scripts": {
-    "test": "mocha test/test.js && mocha-phantomjs test/test.html",
-    "compile": "./compile"
+    "compile": "node compile.js jquery-param.js > jquery-param.min.js",
+    "test": "node test/test-suite.js"
   },
   "repository": {
     "type": "git",
@@ -27,9 +27,10 @@
   "homepage": "https://github.com/knowledgecode/jquery-param",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "jquery": "^1.11.3",
-    "jsdom": "^3.1.2",
-    "mocha": "<=2.2.5",
-    "mocha-phantomjs": "^3.6.0"
+    "jquery": "^3.3.1",
+    "jsdom": "^11.6.0",
+    "mocha": "^5.0.0",
+    "mocha-phantomjs-core": "^2.1.2",
+    "phantomjs-prebuilt": "^2.1.16"
   }
 }

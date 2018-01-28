@@ -1,7 +1,7 @@
 {
   "name": "jquery-param",
   "description": "equivalent function to jQuery.param",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "main": "jquery-param.js",
   "moduleType": [
     "amd",
@@ -15,8 +15,7 @@
     "compile",
     "node_modules",
     "test",
-    "*.json",
-    "*.yml"
+    "*.json"
   ],
   "keywords": [
     "jquery",

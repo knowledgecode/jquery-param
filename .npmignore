@@ -1,5 +1,4 @@
 .*
 bower.json
-*.yml
-compile
+compile.js
 test
