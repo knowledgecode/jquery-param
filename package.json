@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "equivalent function to jQuery.param",
   "main": "jquery-param.js",
   "scripts": {
