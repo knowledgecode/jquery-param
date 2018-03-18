@@ -6,7 +6,6 @@
 
     var param = function (a) {
         var s = [];
-        var rbracket = /\[\]$/;
         var add = function (k, v) {
             v = typeof v === 'function' ? v() : v;
             v = v === null ? '' : v === undefined ? '' : v;
@@ -18,14 +17,10 @@
             if (prefix) {
                 if (Array.isArray(obj)) {
                     for (i = 0, len = obj.length; i < len; i++) {
-                        if (rbracket.test(prefix)) {
-                            add(prefix, obj[i]);
-                        } else {
-                            buildParams(
-                                prefix + '[' + (typeof obj[i] === 'object' && obj[i] ? i : '') + ']',
-                                obj[i]
-                            );
-                        }
+                        buildParams(
+                            prefix + '[' + (typeof obj[i] === 'object' && obj[i] ? i : '') + ']',
+                            obj[i]
+                        );
                     }
                 } else if (String(obj) === '[object Object]') {
                     for (key in obj) {
