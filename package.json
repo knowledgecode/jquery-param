@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "equivalent function to jQuery.param",
   "main": "jquery-param.js",
   "scripts": {
@@ -28,8 +28,8 @@
   "devDependencies": {
     "expect.js": "^0.3.1",
     "jquery": "^3.4.1",
-    "jsdom": "^15.2.1",
-    "mocha": "^7.1.0",
+    "jsdom": "^16.2.2",
+    "mocha": "^7.1.1",
     "mocha-phantomjs-core": "^2.1.2",
     "phantomjs-prebuilt": "^2.1.16"
   }
