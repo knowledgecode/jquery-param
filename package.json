@@ -1,10 +1,11 @@
 {
   "name": "jquery-param",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "equivalent function to jQuery.param",
   "main": "jquery-param.js",
+  "module": "esm/jquery-param.es.js",
   "scripts": {
-    "compile": "node compile.js jquery-param.js > jquery-param.min.js",
+    "build": "rollup --config rollup.config.js",
     "test": "node test/test-suite.js"
   },
   "repository": {
@@ -27,10 +28,12 @@
   "homepage": "https://github.com/knowledgecode/jquery-param",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "jquery": "^3.5.0",
+    "jquery": "^3.5.1",
     "jsdom": "^16.2.2",
-    "mocha": "^7.1.2",
+    "mocha": "^7.2.0",
     "mocha-phantomjs-core": "^2.1.2",
-    "phantomjs-prebuilt": "^2.1.16"
+    "phantomjs-prebuilt": "^2.1.16",
+    "rollup": "^2.18.2",
+    "rollup-plugin-terser": "^6.1.0"
   }
 }
