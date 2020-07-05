@@ -1,9 +1,18 @@
-/**
- * @preserve jquery-param (c) 2015 KNOWLEDGECODE | MIT
- */
-(function (global) {
-    'use strict';
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = global || self, global.param = factory());
+}(this, (function () { 'use strict';
 
+    /**
+     * @preserve jquery-param (c) KNOWLEDGECODE | MIT
+     */
+
+    /**
+     * serialize any object
+     * @param {Object} a - any object to serialize
+     * @returns {string} a serialized string
+     */
     var param = function (a) {
         var s = [];
         var add = function (k, v) {
@@ -44,14 +53,6 @@
         return buildParams('', a).join('&');
     };
 
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        module.exports = param;
-    } else if (typeof define === 'function' && define.amd) {
-        define([], function () {
-            return param;
-        });
-    } else {
-        global.param = param;
-    }
+    return param;
 
-}(this));
+})));
