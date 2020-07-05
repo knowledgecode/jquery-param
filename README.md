@@ -61,7 +61,7 @@ const str = param(obj);
 
 Older browser:
 
-```javascript
+```html
 <script>
 var obj = { key1: { value1: [10, 20, 30] }, key2: '?a=b&c=d' };
 var str = window.param(obj);    // global object
