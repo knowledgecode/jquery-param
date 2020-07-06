@@ -45,13 +45,13 @@ const str = param(obj);
 // => "key1[value1][]=10&key1[value1][]=20&key1[value1][]=30&key2=?a=b&c=d"
 ```
 
-*You will need to add `"esModuleInterop": true` to the `"compilerOptions"` directive in `tsconfig.json`.*
+*You will need to add `"esModuleInterop": true` to the `"compilerOptions"` field in `tsconfig.json`.*
 
 ES Modules:
 
 ```html
 <script type="module">
-import { param } from './esm/jquery-param.es.js';
+import param from './esm/jquery-param.es.js';
 
 const obj = { key1: { value1: [10, 20, 30] }, key2: '?a=b&c=d' };
 const str = param(obj);
