@@ -16,12 +16,7 @@ export default [
                 name: 'param',
                 esModule: false,
                 plugins: [terser()]
-            }
-        ]
-    },
-    {
-        input: 'src/esm.js',
-        output: [
+            },
             {
                 file: 'esm/jquery-param.es.js',
                 format: 'es'

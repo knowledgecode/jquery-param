@@ -47,4 +47,4 @@ var param = function (a) {
     return buildParams('', a).join('&');
 };
 
-export { param };
+export default param;
