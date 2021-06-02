@@ -852,6 +852,13 @@
             var obj = NaN;
             test(done, obj);
         });
+
+        it('null Prototype', function (done) {
+            var obj = Object.create(null);
+            obj.test = Object.create(null);
+            obj.test.test = 1;
+            test(done, obj);
+        });
     });
 
 }(this));
