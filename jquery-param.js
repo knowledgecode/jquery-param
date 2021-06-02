@@ -31,7 +31,7 @@
                             obj[i]
                         );
                     }
-                } else if (String(obj) === '[object Object]') {
+                } else if (Object.prototype.toString.call(obj) === '[object Object]') {
                     for (key in obj) {
                         buildParams(prefix + '[' + key + ']', obj[key]);
                     }
