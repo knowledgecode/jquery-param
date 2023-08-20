@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "equivalent function to jQuery.param",
   "main": "dist/umd/jquery-param.js",
   "module": "dist/esm/jquery-param.mjs",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/knowledgecode/jquery-param.git"
+    "url": "git+https://github.com/knowledgecode/jquery-param.git"
   },
   "keywords": [
     "jquery",
