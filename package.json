@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "equivalent function to jQuery.param",
   "main": "dist/umd/jquery-param.js",
   "module": "dist/esm/jquery-param.mjs",
@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/knowledgecode/jquery-param",
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.3.0",
+    "@rollup/plugin-terser": "^0.4.3",
     "chai": "^4.3.7",
-    "jquery": "^3.6.3",
-    "jsdom": "^21.0.0",
+    "jquery": "^3.7.0",
+    "jsdom": "^22.1.0",
     "mocha": "^10.2.0",
-    "rollup": "^3.10.0"
+    "rollup": "^3.28.0"
   }
 }
