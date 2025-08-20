@@ -1,6 +1,7 @@
 # jquery-param
 
-[![Circle CI](https://circleci.com/gh/knowledgecode/jquery-param.svg?style=shield)](https://circleci.com/gh/knowledgecode/jquery-param)
+[![CI](https://github.com/knowledgecode/jquery-param/actions/workflows/ci.yml/badge.svg)](https://github.com/knowledgecode/jquery-param/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/jquery-param)](https://www.npmjs.com/package/jquery-param)
 
 ## Features
 
