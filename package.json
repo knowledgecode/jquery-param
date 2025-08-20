@@ -1,37 +1,68 @@
 {
   "name": "jquery-param",
-  "version": "1.2.4",
-  "description": "equivalent function to jQuery.param",
-  "main": "dist/umd/jquery-param.js",
-  "module": "dist/esm/jquery-param.mjs",
-  "scripts": {
-    "build": "rollup -c",
-    "test": "npm run build && mocha test/test.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/knowledgecode/jquery-param.git"
-  },
+  "version": "1.2.5",
+  "description": "Equivalent function to jQuery.param",
   "keywords": [
     "jquery",
     "param",
     "equivalent",
     "jquery.param",
     "serialize",
-    "post"
+    "post",
+    "query-string",
+    "url-encoding",
+    "form-data",
+    "browser",
+    "nodejs"
   ],
-  "author": "KNOWLEDGECODE",
-  "license": "MIT",
+  "homepage": "https://github.com/knowledgecode/jquery-param#readme",
   "bugs": {
     "url": "https://github.com/knowledgecode/jquery-param/issues"
   },
-  "homepage": "https://github.com/knowledgecode/jquery-param",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowledgecode/jquery-param.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "KNOWLEDGECODE",
+    "url": "https://github.com/knowledgecode"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/jquery-param.mjs",
+      "require": "./dist/umd/jquery-param.js",
+      "browser": "./jquery-param.min.js"
+    }
+  },
+  "main": "dist/umd/jquery-param.js",
+  "module": "dist/esm/jquery-param.mjs",
+  "browser": "jquery-param.min.js",
+  "sideEffects": false,
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*",
+    "jquery-param.min.js"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test": "npm run build && mocha test/test.mjs",
+    "test:watch": "npm run test -- --watch",
+    "prepublishOnly": "npm run build"
+  },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "chai": "^5.1.1",
+    "chai": "^5.3.1",
     "jquery": "^3.7.1",
-    "jsdom": "^24.1.1",
-    "mocha": "^10.7.3",
-    "rollup": "^4.21.0"
+    "jsdom": "^26.1.0",
+    "mocha": "^11.7.1",
+    "rollup": "^4.46.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
