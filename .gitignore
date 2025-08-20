@@ -1,4 +1,5 @@
 *.min.js
 .DS_Store
+CLAUDE.md
 dist
 node_modules
