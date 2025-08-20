@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { JSDOM } from 'jsdom';
 import jquery from 'jquery';
-import param from '../dist/esm/jquery-param.mjs';
+import param from 'jquery-param';
 
 describe('equivalence', function () {
     var $ = jquery(new JSDOM().window),
