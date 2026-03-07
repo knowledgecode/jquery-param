@@ -1,6 +1,6 @@
 {
   "name": "jquery-param",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Equivalent function to jQuery.param",
   "keywords": [
     "jquery",
@@ -54,12 +54,15 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
-    "chai": "^5.3.1",
+    "@rollup/plugin-terser": "^1.0.0",
+    "chai": "^6.2.2",
     "jquery": "^3.7.1",
-    "jsdom": "^26.1.0",
-    "mocha": "^11.7.1",
-    "rollup": "^4.46.4"
+    "jsdom": "^28.1.0",
+    "mocha": "^11.3.0",
+    "rollup": "^4.59.0"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.3"
   },
   "publishConfig": {
     "access": "public",
