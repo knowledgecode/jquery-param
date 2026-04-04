@@ -1,10 +1,8 @@
-import { expect } from 'chai';
-import { JSDOM } from 'jsdom';
 import jquery from 'jquery';
 import param from 'jquery-param';
 
 describe('equivalence', function () {
-    var $ = jquery(new JSDOM().window),
+    var $ = jquery,
         test = function (obj) {
             expect(decodeURIComponent(param(obj))).to.equal(decodeURIComponent($.param(obj)));
         };
