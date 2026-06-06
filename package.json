@@ -31,13 +31,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/jquery-param.mjs",
-      "require": "./dist/umd/jquery-param.js",
-      "browser": "./jquery-param.min.js"
+      "import": "./dist/esm/jquery-param.js",
+      "require": "./dist/cjs/jquery-param.cjs"
     }
   },
-  "main": "dist/umd/jquery-param.js",
-  "module": "dist/esm/jquery-param.mjs",
+  "main": "./dist/cjs/jquery-param.cjs",
+  "module": "./dist/esm/jquery-param.js",
   "browser": "jquery-param.min.js",
   "sideEffects": false,
   "files": [
