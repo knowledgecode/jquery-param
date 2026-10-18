@@ -385,7 +385,7 @@ describe('equivalence', function () {
         test(obj);
     });
     // function #10 (RegExp)
-    it('function #9', function () {
+    it('function #10', function () {
         var obj = {
             foo: function () {
                 return /[[]]/;
