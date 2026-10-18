@@ -5,7 +5,7 @@
 
 ## Features
 
-- Equivalent to jQuery.param (based on jQuery 3.x)
+- Equivalent to jQuery.param (tested against jQuery 4.x)
 - No dependencies
 - Universal (Isomorphic)
 - ES Modules Support
@@ -53,7 +53,7 @@ const str = param(obj);
 Traditional (Browser):
 
 ```html
-<script src="/path/to/jquery-param.js">
+<script src="/path/to/jquery-param.min.js"></script>
 <script>
 var obj = { key1: { value1: [10, 20, 30] }, key2: '?a=b&c=d' };
 var str = window.param(obj);
