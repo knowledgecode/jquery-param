@@ -841,4 +841,111 @@ describe('equivalence', function () {
         obj.test.test = 1;
         test(obj);
     });
+
+    it('null only', function () {
+        var obj = null;
+        test(obj);
+    });
+
+    it('undefined only', function () {
+        var obj = undefined;
+        test(obj);
+    });
+
+    // empty key #1 (ascii)
+    it('empty key #1', function () {
+        var obj = {
+            '': 'foo'
+        };
+        test(obj);
+    });
+    // empty key #2 (Array)
+    it('empty key #2', function () {
+        var obj = {
+            '': ['foo', 'bar']
+        };
+        test(obj);
+    });
+    // empty key #3 (Object)
+    it('empty key #3', function () {
+        var obj = {
+            '': { foo: 'bar' }
+        };
+        test(obj);
+    });
+
+    // bracketed key #1 (ascii)
+    it('bracketed key #1', function () {
+        var obj = {
+            'foo[]': ['hello', 'world', '!']
+        };
+        test(obj);
+    });
+    // bracketed key #2 (Object and Array)
+    it('bracketed key #2', function () {
+        var obj = {
+            'foo[]': [{ bar: 'hello' }, ['world']]
+        };
+        test(obj);
+    });
+    // bracketed key #3 (function)
+    it('bracketed key #3', function () {
+        var obj = {
+            'foo[]': [function () { return 'hello'; }]
+        };
+        test(obj);
+    });
+
+    it('Map', function () {
+        var obj = {
+            foo: new Map([['bar', 'hello']])
+        };
+        test(obj);
+    });
+
+    it('Set', function () {
+        var obj = {
+            foo: new Set(['hello'])
+        };
+        test(obj);
+    });
+
+    it('Uint8Array', function () {
+        var obj = {
+            foo: new Uint8Array([1, 2, 3])
+        };
+        test(obj);
+    });
+
+    it('Arguments', function () {
+        var obj = {
+            foo: (function () { return arguments; }('hello', 'world'))
+        };
+        test(obj);
+    });
+
+    // Symbol.toStringTag #1 (custom)
+    it('Symbol.toStringTag #1', function () {
+        var foo = { bar: 'hello' };
+        var obj = { foo: foo };
+
+        foo[Symbol.toStringTag] = 'Custom';
+        test(obj);
+    });
+    // Symbol.toStringTag #2 (Array)
+    it('Symbol.toStringTag #2', function () {
+        var foo = { bar: 'hello' };
+        var obj = { foo: foo };
+
+        foo[Symbol.toStringTag] = 'Array';
+        test(obj);
+    });
+    // Symbol.toStringTag #3 (Function)
+    it('Symbol.toStringTag #3', function () {
+        var foo = { bar: 'hello' };
+        var obj = { foo: foo };
+
+        foo[Symbol.toStringTag] = 'Function';
+        test(obj);
+    });
 });
